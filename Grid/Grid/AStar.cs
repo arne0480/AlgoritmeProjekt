@@ -9,39 +9,58 @@ namespace Grid
 {
     class AStar
     {
+        
+        private Cell currentPosition = null;
+        private Cell startPos;//Set to start pos
+        private Cell endPos; //Set to end pos
+        private List<Cell> openList = new List<Cell>();
+        private List<Cell> closedList = new List<Cell>();
+        private int g = 0;
 
-        public bool search (Cell currentNode)
+        #region Properties
+        public List<Cell> OpenList
         {
-            List<Cell> surroundingNodes = GetAdjacentWalkableNodes(currentNode);
-            surroundingNodes.Sort((cell1, cell2) => cell1.F.CompareTo(cell2.F));
-            foreach (Cell cell in surroundingNodes)
+            get { return openList; }
+            set { openList = value; }
+        }
+        public List<Cell> ClosedList
+        {
+            get { return closedList; }
+            set { closedList = value; }
+        }
+        public Cell StartPos
+        {
+            get { return startPos; }
+            set { startPos = value; }
+        }
+        public Cell EndPos
+        {
+            get { return endPos; }
+            set { endPos = value; }
+        }
+        #endregion
+
+        public void Search()
+        {
+            OpenList.Add(startPos);
+
+            while (OpenList.Count > 0)
             {
+                int lowest = openList.Min(l=>l.F);
+                currentPosition = openList.First(l => l.F == lowest);
+
+                ClosedList.Add(currentPosition);
+                OpenList.Remove(currentPosition);
+
+                if (ClosedList.FirstOrDefault(l => l.X == EndPos.X && l.Y == EndPos.Y)! = null)
+                    break;
 
             }
-            return;
         }
-        public List<Cell> GetAdjacentWalkableNodes(Cell fromNode)
+        public List<Cell> GetWalkableNodes(int x, int y, GridManager map)
         {
-            List<Cell> walkableNodes = new List<Cell>();
-            IEnumerable<Point> nextLocation = GetAdjacentWalkableNodes(fromNode.Position);
 
-            foreach  (Point location in nextLocation)
-            {
-                int x = location.X;
-                int y = location.Y;
-
-                if (x < 0 || x >= this.width || y < 0 || y >= this.height)
-                    continue;
-                Cell cell = this.nodes[x, y];
-                if (!fromNode.WalkAble)
-                    continue;
-                if (cell.NodeState == NodeState.CLOSED)
-                    continue;
-                if(cell.NodeState == NodeState.EMPTY)
-                {
-
-                }
-            }
         }
+
     }
 }

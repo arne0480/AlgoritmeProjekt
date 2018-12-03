@@ -8,37 +8,54 @@ using static Grid.CellType;
 
 namespace Grid
 {
-    enum NodeState { START, GOAL, WALL, EMPTY, CLOSED };
+    enum CellType { START, GOAL, WALL, EMPTY, CLOSED };
 
     class Cell
     {
         /// <summary>
         /// The grid position of the cell
         /// </summary>
+
         private Point position;
-        private bool walkable;
+        private Point start;
+        private Point end;
         private int g;
         private int h;
         private int f;
         private Cell parentNode;
-        private NodeState nodeState;
+        private CellType nodeState;
+        
+        /// <summary>
+        /// The size of the cell
+        /// </summary>
+        private int cellSize;
+
+        /// <summary>
+        /// The cell's sprite
+        /// </summary>
+        private Image sprite;
 
         #region Properties
-        public NodeState NodeState
+        public CellType NodeState
         {
             get { return nodeState; }
             set { nodeState = value; }
         }
+        public Point Start
+        {
+            get { return start; }
+            set { start = value; }
+        }
 
+        public Point End
+        {
+            get { return end; }
+            set { end = value; }
+        }
         public Point Position
         {
             get { return position; }
             set { position = value; }
-        }
-        public bool WalkAble
-        {
-            get { return walkable; }
-            set { walkable = value; }
         }
         public int G
         {
@@ -61,17 +78,11 @@ namespace Grid
             get { return parentNode; }
             set { parentNode = value; }
         }
+
+
         #endregion
 
-        /// <summary>
-        /// The size of the cell
-        /// </summary>
-        private int cellSize;
 
-        /// <summary>
-        /// The cell's sprite
-        /// </summary>
-        private Image sprite;
 
         /// <summary>
         /// Sets the celltype to empty as default
@@ -87,6 +98,11 @@ namespace Grid
             {
                 return new Rectangle(position.X * cellSize, position.Y * cellSize, cellSize, cellSize);
             }
+        }
+
+        public int HScore(int x, int y, int targetX, int targetY)
+        {
+            return Math.Abs(targetX - x) + Math.Abs(targetY - y);
         }
 
         /// <summary>
@@ -138,12 +154,14 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Start.png");
                 myType = clickType;
                 clickType = GOAL;
+                Start = position;
             }
             else if (clickType == GOAL && myType != START) //If the click type is GOAL
             {
                 sprite = Image.FromFile(@"Images\Goal.png");
                 clickType = WALL;
                 myType = GOAL;
+                End = position;
             }
             else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
             {
