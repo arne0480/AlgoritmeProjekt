@@ -8,7 +8,7 @@ using static Grid.CellType;
 
 namespace Grid
 {
-    enum CellType { START, GOAL, WALL, EMPTY };
+    enum NodeState { START, GOAL, WALL, EMPTY, CLOSED };
 
     class Cell
     {
@@ -16,6 +16,52 @@ namespace Grid
         /// The grid position of the cell
         /// </summary>
         private Point position;
+        private bool walkable;
+        private int g;
+        private int h;
+        private int f;
+        private Cell parentNode;
+        private NodeState nodeState;
+
+        #region Properties
+        public NodeState NodeState
+        {
+            get { return nodeState; }
+            set { nodeState = value; }
+        }
+
+        public Point Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+        public bool WalkAble
+        {
+            get { return walkable; }
+            set { walkable = value; }
+        }
+        public int G
+        {
+            get { return g; }
+            set { g = value; }
+        }
+        public int H
+        {
+            get { return h; }
+            set { h = value; }
+        }
+        public int F
+        {
+            get { return f; }
+            set { f = value; }
+        }
+
+        public Cell ParentNode
+        {
+            get { return parentNode; }
+            set { parentNode = value; }
+        }
+        #endregion
 
         /// <summary>
         /// The size of the cell
