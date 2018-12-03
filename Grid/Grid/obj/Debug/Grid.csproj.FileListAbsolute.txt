@@ -35,3 +35,16 @@ D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.Genera
 D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
 D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.exe
 D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.pdb
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Wall.png
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Goal.png
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Start.png
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.exe.config
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.exe
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.pdb
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csprojAssemblyReference.cache
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.Form1.resources
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.cache
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.exe
+D:\Skole\EA Dania\Programmering\Algoritmer\Algoritme Projekt\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.pdb
