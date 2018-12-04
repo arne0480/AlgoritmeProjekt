@@ -8,15 +8,23 @@ using static Grid.CellType;
 
 namespace Grid
 {
-    enum CellType { START, GOAL, WALL, EMPTY };
+    enum CellType { START, GOAL, WALL, EMPTY, CLOSED };
 
     class Cell
     {
         /// <summary>
         /// The grid position of the cell
         /// </summary>
-        private Point position;
 
+        private Point position;
+        private int x;
+        private int y;
+        private int g;
+        private int h;
+        private int f;
+        private Cell parentNode;
+        private CellType nodeState;
+        
         /// <summary>
         /// The size of the cell
         /// </summary>
@@ -26,6 +34,55 @@ namespace Grid
         /// The cell's sprite
         /// </summary>
         private Image sprite;
+
+        #region Properties
+        public CellType NodeState
+        {
+            get { return nodeState; }
+            set { nodeState = value; }
+        }
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+        public Point Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+        public int G
+        {
+            get { return g; }
+            set { g = value; }
+        }
+        public int H
+        {
+            get { return h; }
+            set { h = value; }
+        }
+        public int F
+        {
+            get { return f; }
+            set { f = value; }
+        }
+
+        public Cell ParentNode
+        {
+            get { return parentNode; }
+            set { parentNode = value; }
+        }
+
+
+        #endregion
+
+
 
         /// <summary>
         /// Sets the celltype to empty as default
@@ -41,6 +98,11 @@ namespace Grid
             {
                 return new Rectangle(position.X * cellSize, position.Y * cellSize, cellSize, cellSize);
             }
+        }
+
+        public static int HScore(int x, int y, int targetX, int targetY)
+        {
+            return Math.Abs(targetX - x) + Math.Abs(targetY - y);
         }
 
         /// <summary>
@@ -92,12 +154,14 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Start.png");
                 myType = clickType;
                 clickType = GOAL;
+                
             }
             else if (clickType == GOAL && myType != START) //If the click type is GOAL
             {
                 sprite = Image.FromFile(@"Images\Goal.png");
                 clickType = WALL;
                 myType = GOAL;
+                
             }
             else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
             {

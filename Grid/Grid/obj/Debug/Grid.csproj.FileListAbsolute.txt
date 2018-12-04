@@ -35,3 +35,16 @@ D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.Genera
 D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
 D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.exe
 D:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.pdb
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Wall.png
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Goal.png
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Start.png
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.exe.config
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.exe
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.pdb
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csprojAssemblyReference.cache
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.Form1.resources
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.cache
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.exe
+C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.pdb
