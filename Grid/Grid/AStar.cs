@@ -52,13 +52,41 @@ namespace Grid
                 ClosedList.Add(currentPosition);
                 OpenList.Remove(currentPosition);
 
-                if (ClosedList.FirstOrDefault(l => l.X == EndPos.X && l.Y == EndPos.Y)! = null)
+                if (ClosedList.FirstOrDefault(l => l.X == EndPos.X && l.Y == EndPos.Y)!= null)
                     break;
+
+                foreach (Cell GetWalkableSquare in GetWalkableSquares)
+                {
+                    if (closedList.FirstOrDefault(l => l.X == GetWalkableSquare.X && l.Y == GetWalkableSquare.Y) != null)
+                        continue;
+                    if(openList.FirstOrDefault(l => l.X == GetWalkableSquare.X && l.Y == GetWalkableSquare.Y) != null)
+                    {
+                        GetWalkableSquare.G = g;
+                        GetWalkableSquare.H = Cell.HScore(GetWalkableSquare.X, GetWalkableSquare.Y, EndPos.X, EndPos.Y);
+                        GetWalkableSquare.F = GetWalkableSquare.G + GetWalkableSquare.H;
+                        GetWalkableSquare.ParentNode = currentPosition;
+
+                        openList.Insert(0, GetWalkableSquare);
+                    }
+
+                    else if(g + GetWalkableSquare.H < GetWalkableSquare.F)
+                    {
+                        GetWalkableSquare.G = g;
+                        GetWalkableSquare.F = GetWalkableSquare.G + GetWalkableSquare.H;
+                        GetWalkableSquare.ParentNode = currentPosition;
+
+                    }
+                }
 
             }
         }
+
+        List<Cell> GetWalkableSquares = GetWalkableNodes(currentPosition.X, currentPosition.Y, map);
         public List<Cell> GetWalkableNodes(int x, int y, GridManager map)
         {
+            List<Cell> proposedLocations = new List<Cell>();
+
+
 
         }
 

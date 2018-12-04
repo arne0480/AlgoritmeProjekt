@@ -17,8 +17,8 @@ namespace Grid
         /// </summary>
 
         private Point position;
-        private Point start;
-        private Point end;
+        private int x;
+        private int y;
         private int g;
         private int h;
         private int f;
@@ -41,16 +41,16 @@ namespace Grid
             get { return nodeState; }
             set { nodeState = value; }
         }
-        public Point Start
+        public int X
         {
-            get { return start; }
-            set { start = value; }
+            get { return x; }
+            set { x = value; }
         }
 
-        public Point End
+        public int Y
         {
-            get { return end; }
-            set { end = value; }
+            get { return y; }
+            set { y = value; }
         }
         public Point Position
         {
@@ -100,7 +100,7 @@ namespace Grid
             }
         }
 
-        public int HScore(int x, int y, int targetX, int targetY)
+        public static int HScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
         }
@@ -154,14 +154,14 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Start.png");
                 myType = clickType;
                 clickType = GOAL;
-                Start = position;
+                
             }
             else if (clickType == GOAL && myType != START) //If the click type is GOAL
             {
                 sprite = Image.FromFile(@"Images\Goal.png");
                 clickType = WALL;
                 myType = GOAL;
-                End = position;
+                
             }
             else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
             {
