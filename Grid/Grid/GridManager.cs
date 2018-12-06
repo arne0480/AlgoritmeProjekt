@@ -25,7 +25,7 @@ namespace Grid
         /// <summary>
         /// This list contains all cells
         /// </summary>
-        private List<Cell> grid;
+       static private List<Cell> grid;
 
         /// <summary>
         /// The current click type
@@ -93,6 +93,18 @@ namespace Grid
             }
         }
 
+
+        public Cell getCell(int x, int y)
+        {
+            foreach (Cell cell in grid)
+	{
+                if (cell.X == x && cell.Y == y)
+                {
+                    return cell;
+                }
+	}
+            return null;
+        }
         /// <summary>
         /// If the mouse clicks on a cell
         /// </summary>
