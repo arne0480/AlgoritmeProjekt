@@ -24,6 +24,7 @@ namespace Grid
         private int f;
         private Cell parentNode;
         private CellType nodeState;
+
         
         /// <summary>
         /// The size of the cell
@@ -82,7 +83,8 @@ namespace Grid
 
         #endregion
 
-
+        public Cell thisCell;
+        public GridManager gm;
 
         /// <summary>
         /// Sets the celltype to empty as default
@@ -116,6 +118,7 @@ namespace Grid
             this.cellSize = size;
 
         }
+
 
         public static int HScore(int x, int y, int targetX, int targetY)
         {
@@ -155,6 +158,7 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Start.png");
                 myType = clickType;
                 clickType = GOAL;
+                gm.start = thisCell;
                 
             }
             else if (clickType == GOAL && myType != START) //If the click type is GOAL
@@ -162,7 +166,7 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Goal.png");
                 clickType = WALL;
                 myType = GOAL;
-                
+                gm.goal = thisCell;
             }
             else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
             {
