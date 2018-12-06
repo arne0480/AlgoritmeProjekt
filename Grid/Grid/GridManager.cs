@@ -59,6 +59,7 @@ namespace Grid
             foreach (Cell cell in grid)
             {
                 cell.Render(dc);
+                
             }
 
             //Renders the content of the buffered graphics context to the real context(Swap buffers)
