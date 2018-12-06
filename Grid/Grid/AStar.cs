@@ -66,7 +66,7 @@ namespace Grid
 
                 foreach (Cell GetWalkableSquare in GetWalkableSquares)
                 {
-                    if (closedList.FirstOrDefault(l => l.X == GetWalkableSquare.X && l.Y == GetWalkableSquare.Y) != null)
+                    if (closedList.FirstOrDefault(  l => l.X == GetWalkableSquare.X && l.Y == GetWalkableSquare.Y) != null)
                         continue;
                     if(openList.FirstOrDefault(l => l.X == GetWalkableSquare.X && l.Y == GetWalkableSquare.Y) != null)
                     {
