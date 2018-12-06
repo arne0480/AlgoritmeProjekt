@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Grid.CellType;
 
 namespace Grid
 {
@@ -16,6 +17,10 @@ namespace Grid
         private List<Cell> openList = new List<Cell>();
         private List<Cell> closedList = new List<Cell>();
         private int g = 0;
+        static private Graphics dc;
+        static private Rectangle displayRectangle;
+        private GridManager map = new GridManager(dc, displayRectangle);
+
 
         #region Properties
         public List<Cell> OpenList
@@ -61,7 +66,7 @@ namespace Grid
                 if (ClosedList.FirstOrDefault(l => l.X == EndPos.X && l.Y == EndPos.Y)!= null)
                     break;
 
-                List<Cell> GetWalkableSquares = GetWalkableNodes(currentPosition.X, currentPosition.Y);
+                List<Cell> GetWalkableSquares = GetWalkableNodes(currentPosition.X, currentPosition.Y, map);
                 g++;
 
                 foreach (Cell GetWalkableSquare in GetWalkableSquares)
@@ -91,7 +96,7 @@ namespace Grid
         }
 
         
-        public List<Cell> GetWalkableNodes(int x, int y)
+        public List<Cell> GetWalkableNodes(int x, int y, GridManager map)
         {
             List<Cell> proposedLocations = new List<Cell>();
             {
@@ -102,7 +107,9 @@ namespace Grid
 
             }
 
-            return proposedLocations;
+            //return proposedLocations;
+            return proposedLocations.Where(
+        l => map.getCell(l.Y, l.X).MyType == CellType.EMPTY || map.getCell(l.Y, l.X).MyType == CellType.GOAL).ToList(); /*map[l.Y][l.X] == 'B').ToList()*//*;*/
         }
 
     }

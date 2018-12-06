@@ -24,7 +24,8 @@ namespace Grid
         private int f;
         private Cell parentNode;
         private CellType nodeState;
-        
+        private Cell startpos;
+
         /// <summary>
         /// The size of the cell
         /// </summary>
@@ -100,6 +101,8 @@ namespace Grid
             }
         }
 
+        internal CellType MyType { get => myType; set => myType = value; }
+
 
 
         /// <summary>
@@ -117,6 +120,11 @@ namespace Grid
 
         }
 
+        public Cell (int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
         public static int HScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
@@ -155,7 +163,7 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Start.png");
                 myType = clickType;
                 clickType = GOAL;
-                
+                startpos = position.X + position.Y;
             }
             else if (clickType == GOAL && myType != START) //If the click type is GOAL
             {
