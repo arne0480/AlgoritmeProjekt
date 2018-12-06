@@ -100,6 +100,8 @@ namespace Grid
             }
         }
 
+        internal CellType MyType { get => myType; set => myType = value; }
+
 
 
         /// <summary>
@@ -117,6 +119,11 @@ namespace Grid
 
         }
 
+        public Cell (int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
         public static int HScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
