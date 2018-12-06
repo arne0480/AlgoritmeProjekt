@@ -48,3 +48,16 @@ C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.GenerateR
 C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.exe
 C:\Users\User\Desktop\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.pdb
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Wall.png
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Goal.png
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\bin\Debug\Images\Start.png
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.exe.config
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.exe
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\bin\Debug\Grid.pdb
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csprojAssemblyReference.cache
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.Form1.resources
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.cache
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.exe
+C:\Users\johannes\Desktop\Algoritmer 3. semester\AlgoritmeProjekt\Grid\Grid\obj\Debug\Grid.pdb

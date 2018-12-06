@@ -102,7 +102,7 @@ namespace Grid
             }
         }
 
-
+        internal CellType MyType { get => myType; set => myType = value; }
 
         /// <summary>
         /// The cell's constructor
@@ -120,6 +120,11 @@ namespace Grid
         }
 
 
+        public Cell(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
         public static int HScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
@@ -158,7 +163,7 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Start.png");
                 myType = clickType;
                 clickType = GOAL;
-                gm.start = thisCell;
+                gm.Goal = thisCell;
                 
             }
             else if (clickType == GOAL && myType != START) //If the click type is GOAL
@@ -166,7 +171,7 @@ namespace Grid
                 sprite = Image.FromFile(@"Images\Goal.png");
                 clickType = WALL;
                 myType = GOAL;
-                gm.goal = thisCell;
+                gm.Goal = thisCell;
             }
             else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
             {

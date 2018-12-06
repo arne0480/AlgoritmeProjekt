@@ -16,6 +16,8 @@ namespace Grid
         private BufferedGraphics backBuffer;
         private Graphics dc;
         private Rectangle displayRectangle;
+        private Cell start;
+        private Cell goal;
 
         /// <summary>
         /// Amount of rows in the grid
@@ -36,6 +38,16 @@ namespace Grid
         {
             get { return grid; }
             set { grid = value; }
+        }
+        public Cell Start
+        {
+            get { return start; }
+            set { start = value; }
+        }
+        public Cell Goal
+        {
+            get { return goal; }
+            set { goal = value; }
         }
 
         public GridManager(Graphics dc, Rectangle displayRectangle)
@@ -91,6 +103,18 @@ namespace Grid
                     grid.Add(new Cell(new Point(x, y), cellSize));
                 }
             }
+        }
+
+        public Cell getCell(int x, int y)
+        {
+            foreach (Cell cell in grid)
+            {
+                if (cell.Y == x && cell.Y == y)
+                {
+                    return cell;
+                }
+            }
+            return null;
         }
 
         /// <summary>
