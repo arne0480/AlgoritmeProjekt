@@ -1,16 +1,2 @@
 
-Grid/\.vs/Grid/v15/Server/sqlite3/storage\.ide-shm
-
-Grid/Grid/obj/Debug/Grid\.csproj\.CoreCompileInputs\.cache
-
-Grid/Grid/obj/Debug/Grid\.csprojAssemblyReference\.cache
-
-<<<<<<< HEAD
-Grid/Grid/obj/Debug/Grid\.csproj\.FileListAbsolute\.txt
-
-Grid/\.vs/Grid/v15/Server/sqlite3/storage\.ide-wal
-=======
-Grid/\.vs/Grid/v15/\.suo
->>>>>>> master
-
-*.ide-wal
+*.ide-shm
