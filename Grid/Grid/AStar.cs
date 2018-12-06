@@ -38,7 +38,13 @@ namespace Grid
             get { return endPos; }
             set { endPos = value; }
         }
+        public Cell CurrentPos
+        {
+            get { return currentPosition; }
+            set { currentPosition = value; }
+        }
         #endregion
+
 
         public void Search()
         {
@@ -54,6 +60,9 @@ namespace Grid
 
                 if (ClosedList.FirstOrDefault(l => l.X == EndPos.X && l.Y == EndPos.Y)!= null)
                     break;
+
+                List<Cell> GetWalkableSquares = GetWalkableNodes(currentPosition.X, currentPosition.Y);
+                g++;
 
                 foreach (Cell GetWalkableSquare in GetWalkableSquares)
                 {
@@ -81,13 +90,19 @@ namespace Grid
             }
         }
 
-        List<Cell> GetWalkableSquares = GetWalkableNodes(currentPosition.X, currentPosition.Y, map);
-        public List<Cell> GetWalkableNodes(int x, int y, GridManager map)
+        
+        public List<Cell> GetWalkableNodes(int x, int y)
         {
             List<Cell> proposedLocations = new List<Cell>();
+            {
+                new Point { X = x, Y = y - 1 };
+                new Point { X = x, Y = y + 1 };
+                new Point { X = x - 1, Y = y };
+                new Point { X = x + 1, Y = y };
 
+            }
 
-
+            return proposedLocations;
         }
 
     }

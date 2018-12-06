@@ -100,10 +100,7 @@ namespace Grid
             }
         }
 
-        public static int HScore(int x, int y, int targetX, int targetY)
-        {
-            return Math.Abs(targetX - x) + Math.Abs(targetY - y);
-        }
+
 
         /// <summary>
         /// The cell's constructor
@@ -120,6 +117,10 @@ namespace Grid
 
         }
 
+        public static int HScore(int x, int y, int targetX, int targetY)
+        {
+            return Math.Abs(targetX - x) + Math.Abs(targetY - y);
+        }
         /// <summary>
         /// Renders the cell
         /// </summary>

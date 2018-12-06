@@ -32,6 +32,12 @@ namespace Grid
         /// </summary>
         private CellType clickType;
 
+        public List<Cell> Grid
+        {
+            get { return grid; }
+            set { grid = value; }
+        }
+
         public GridManager(Graphics dc, Rectangle displayRectangle)
         {
             //Create's (Allocates) a buffer in memory with the size of the display
